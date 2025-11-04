@@ -21,7 +21,9 @@
                         Series
                     </a>
                     <ul class="dropdown-menu">
-                        
+                        <li class="nav-item" v-for="serie in series" :key="serie">
+                            <router-link class="dropdown-item" :to="'/serie/'+serie.idSerie">{{serie.nombre}}</router-link>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -30,9 +32,34 @@
     </nav>
 </template>
 
-<script>export default 
+<script>
+    import ServicioSeries from './../servicios/ServicioSeries';
+
+    const servicio = new ServicioSeries();
+
+    export default 
     {
-        name:"MenuComponent"
+        name:"MenuComponent",
+        data()
+        {
+            return{
+                series:[]
+            }
+        },
+        methods:
+        {
+            getSeries()
+            {
+                servicio.getSeries().then(result =>
+                {   
+                    this.series = result;
+                })
+            }
+        },
+        mounted()
+        {
+            this.getSeries();
+        }
     }
 </script>
 

@@ -20,11 +20,11 @@ const rutas =
         component: Update
     },
     {
-        path:"/serie",
+        path:"/serie/:idSerie",
         component: Serie
     },
     {
-        path:"/personajes",
+        path:"/personajes/:idSerie",
         component: Personajes
     }
 ]
