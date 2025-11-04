@@ -60,13 +60,13 @@
             {
                 var personaje = 
                 {
-                    idPersonaje:this.idPersonaje,
+                    idPersonaje:this.personaje.idPersonaje,
                     nombre:this.personaje.nombre,
                     imagen:this.personaje.imagen,
                     idSerie:this.idSerie
                 }
 
-                servicio.createPersonaje(personaje).then(result =>
+                servicio.updatePersonaje(personaje).then(result =>
                 {   
                     console.log(result);
                     this.$router.push("/");

@@ -58,4 +58,18 @@ export default class ServicioSeries
             })
         })
     }
+
+    updatePersonaje(personaje)
+    {
+        return new Promise(function(resolve)
+        {
+            var url = Global.api;
+            var endPoint = "api/Personajes/"+personaje.idPersonaje+"/"+personaje.idSerie;
+
+            axios.put(url+endPoint, personaje).then(response=>
+            {
+                resolve(response);
+            })
+        })
+    }
 }
