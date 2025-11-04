@@ -31,12 +31,12 @@ export default class ServicioSeries
         })
     }
 
-    findPersonaje(id)
+    findSerie(id)
     {
         return new Promise(function(resolve)
         {
             var url = Global.api;
-            var endPoint = "api/Personajes/"+id;
+            var endPoint = "api/Series/"+id;
 
             axios.get(url+endPoint).then(response=>
             {
