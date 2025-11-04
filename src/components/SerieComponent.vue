@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img :src="serie.imagen"/>
+        <!-- <img :src="serie.imagen"/> -->
         <h2>{{serie.nombre}}</h2>
         <h3>IMDB: {{serie.puntuacion}}</h3>
         <button class="btn btn-warning"><router-link :to="'/personajes/'+idSerie">Personajes</router-link></button>
